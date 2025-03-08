@@ -5,8 +5,8 @@ from datetime import datetime, timedelta
 import time
 
 # step-2 twilio credentials
-account_sid = 'ACb4416a30404ae27ee7a526304e30a89b'
-auth_token = 'da6a7e30a5479ec950dc2339802d3cc5'
+account_sid = '' #this account_SID porvide by Twilio after sign up.
+auth_token = ''  # #this auth_token porvide by Twilio after sign up
 
 client = Client(account_sid, auth_token)
 
@@ -14,7 +14,7 @@ client = Client(account_sid, auth_token)
 def send_whatsapp_message(recipient_number, message_body):
     try:
         message = client.messages.create(
-            from_='whatsapp:+14155238886',
+            from_='whatsapp:',  #Enter the number after colon given by twilio.
             body=message_body,
             to=f'whatsapp:{recipient_number}'
         )
